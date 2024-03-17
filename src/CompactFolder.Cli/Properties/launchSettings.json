@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CompactFolder.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "-i D:\\Tests -o file.zip -t email --emailTo email@email.com",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

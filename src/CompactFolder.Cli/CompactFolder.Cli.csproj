@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.1.30;netcoreapp2.1;net48</TargetFrameworks>
+    <DefaultFramework>netcoreapp2.1</DefaultFramework>
+    <!--<PreserveCompilationContext>true</PreserveCompilationContext> --><!-- Para possibilitar a criação do Body do email separadamente -->
+    <NoWarn>NETSDK1138</NoWarn>
+    <UserSecretsId>81eedb98-b4bb-4095-bf44-429ce464abf5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.Development.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CompactFolder.Application\CompactFolder.Application.csproj" />
+    <ProjectReference Include="..\CompactFolder.Domain\CompactFolder.Domain.csproj" />
+    <ProjectReference Include="..\CompactFolder.Infrastructure\CompactFolder.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NETCore.App">
+      <NoWarn>NU1902,NU1903</NoWarn>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
